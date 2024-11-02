@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  .animated-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    transform: translateY(-100%); // Start off-screen
+    transition: transform 0.5s ease-out; // Smooth animation
+    
+    ul {
+      list-style: none;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      
+      li {
+        a {
+          color: white;
+          text-decoration: none;
+          font-size: 1.2rem;
+          transition: color 0.3s;
+          
+          &:hover {
+            color: #ff4081;
+          }
+        }
+      }
+    }
+    
+    &.visible {
+      transform: translateY(0); // Slide down to visible position
+    }
+  }
+  
